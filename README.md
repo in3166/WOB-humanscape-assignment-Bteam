@@ -48,8 +48,7 @@
 ├─assets
 │  └─svgs
 ├─components
-│  └─ErrorBoundary
-│      └─ErrorFallback
+│  └─ErrorFallback
 ├─hooks
 ├─routes
 │  ├─MainPage
