@@ -23,9 +23,9 @@ const SearchInput = ({ getAllDataIsFetched }: ISearchInputProps) => {
   const [isOpenDropdown, setIsOpenDropdown] = useState(false)
   const [focusedDropDownItemIndex, setFocusedDropDownItemIndex] = useState<number>(-1)
   const [focusedDropDownItemTitle, setFocusedDropDownItemTitle] = useState<string>('')
+
   const inputRef = useRef<HTMLInputElement>(null)
   const { isLoading, data: diseaseData } = useGetDisease({ searchWord: debouncedValue, isConsonant })
-
   const allDiseaseData = useAppSelector(getDiseaseList)
 
   const handleOnChangeInput = (e: ChangeEvent<HTMLInputElement>): void => {

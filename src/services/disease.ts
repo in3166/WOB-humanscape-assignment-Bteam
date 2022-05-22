@@ -18,7 +18,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
-    if (response.data.response.body.items === '' || !response.data.response.body.items.item)
+    if (!response.data.response || response.data.response.body.items === '' || !response.data.response.body.items.item)
       return {
         data: '',
       }
@@ -34,7 +34,7 @@ axiosInstance.interceptors.response.use(
 export const getDisease = (params: Params) =>
   axiosInstance.get(`${DISEASE_BASE_URL}`, {
     params: {
-      serviceKey: process.env.REACT_APP_DISEASE_API_KEY2,
+      serviceKey: process.env.REACT_APP_DISEASE_API_KEY,
       ...params,
     },
   })
