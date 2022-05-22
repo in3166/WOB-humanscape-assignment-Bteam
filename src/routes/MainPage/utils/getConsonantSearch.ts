@@ -53,7 +53,7 @@ function createFuzzyMatcher(input: string) {
 const getConsonantSearch = (searchConsonant: string, allDiseaseData: IDiseaseItem[]): IDiseaseItem[] => {
   const regex = createFuzzyMatcher(searchConsonant)
 
-  // TODO: 정리
+  // TODO: 정리 search input 안으로?
   const filteredData = allDiseaseData
     .filter((row) => {
       return regex.test(row.sickNm)

@@ -25,9 +25,9 @@ const DropDown = ({
 }: IDropDownProps) => {
   // TODO: getAllDataIsFetched 지저분..
 
-  useEffect(() => {
-    return setFocusedDropDownItemIndex(-1)
-  }, [setFocusedDropDownItemIndex, suggestedKeyword])
+  // useEffect(() => {
+  //   return setFocusedDropDownItemIndex(-1)
+  // }, [setFocusedDropDownItemIndex, suggestedKeyword])
 
   return (
     <div className={styles.dropDownWrapper}>

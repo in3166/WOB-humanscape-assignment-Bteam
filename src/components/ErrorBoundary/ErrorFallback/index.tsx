@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify'
 import { IDiseaseError } from 'types/disease'
 import styles from './ErrorFallback.module.scss'
 
@@ -7,15 +8,18 @@ interface IErrorFallbackProps {
 }
 
 const ErrorFallback = ({ error, myError }: IErrorFallbackProps) => {
+  const sanitizer = DOMPurify.sanitize
   const myErrorHandler = () => {
     window.location.reload()
   }
 
+  // TODO: dangerously
   return (
     <div role='alert' className={styles.wrapper}>
       <dl className={styles.errorBox}>
         <dt>Error Text </dt>
-        <dd>{myError.responseText}</dd>
+        {/* eslint-disable-next-line react/no-danger */}
+        <dd dangerouslySetInnerHTML={{ __html: sanitizer(myError.responseText) }} />
         <dd>{error.message}</dd>
       </dl>
       <dl className={styles.errorBox}>
