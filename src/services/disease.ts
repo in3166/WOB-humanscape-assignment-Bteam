@@ -18,11 +18,6 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
-    if (!response.data.response) {
-      const errorMsg: IDiseaseError = { responseText: response.data, requestURL: response.config.url ?? '' }
-      return Promise.reject(errorMsg)
-    }
-
     if (response.data.response.body.items === '' || !response.data.response.body.items.item)
       return {
         data: '',

@@ -13,6 +13,7 @@ interface IDropDownItemProps {
   focusedDropDownItemIndex: number
   setInputValue: Dispatch<SetStateAction<string>>
   setFocusedDropDownItemIndex: Dispatch<SetStateAction<number>>
+  setFocusedDropDownItemTitle: Dispatch<SetStateAction<string>>
 }
 
 const DropDownItem = ({
@@ -22,16 +23,18 @@ const DropDownItem = ({
   focusedDropDownItemIndex,
   setInputValue,
   setFocusedDropDownItemIndex,
+  setFocusedDropDownItemTitle,
 }: IDropDownItemProps) => {
   const [isFocused, setIsFocused] = useState(false)
 
   useEffect(() => {
     if (itemIndex === focusedDropDownItemIndex) {
       setIsFocused(true)
+      setFocusedDropDownItemTitle(keyWord)
     } else {
       setIsFocused(false)
     }
-  }, [focusedDropDownItemIndex, itemIndex, isFocused, keyWord])
+  }, [focusedDropDownItemIndex, itemIndex, isFocused, keyWord, setFocusedDropDownItemTitle])
 
   const handleMouseHoverEvent = () => {
     setFocusedDropDownItemIndex(itemIndex)
@@ -51,7 +54,6 @@ const DropDownItem = ({
 
   const searchWordArray = exceptMatchWord.join(`/${matchWord}/`).split('/')
 
-  // TODO: span 수정, 위로 따로 빼기?
   return (
     <li
       role='menuitem'
@@ -59,12 +61,12 @@ const DropDownItem = ({
       onMouseMove={handleMouseHoverEvent}
       onClick={handleDropDownItemClick}
     >
-      <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.serchIcon} />
-      <span>
+      <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.searchIcon} />
+      <div>
         {searchWordArray.map((part, index) =>
           part === matchWord ? <mark key={`${keyWord}-${searchWord}-${index + 1}`}>{part}</mark> : part
         )}
-      </span>
+      </div>
     </li>
   )
 }
