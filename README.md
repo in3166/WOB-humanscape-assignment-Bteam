@@ -11,23 +11,23 @@
 ## 팀원
 ### 노서현
 
-📒 [blog]() | 💻 [github]()
+📒 [blog](https://doooodle932.tistory.com/) | 💻 [github](https://github.com/Seohyun-Roh)
 
 ### 마지혁
 
-📒 [blog]() | 💻 [github]()
+📒 [blog](https://velog.io/@maji93) | 💻 [github](https://github.com/majih93)
 
 ### 유인종
 
-📒 [blog]() | 💻 [github]()
+📒 [blog](https://velog.io/@in3166) | 💻 [github](https://github.com/in3166)
 
 ### 지수근
 
-📒 [blog]() | 💻 [github]()
+📒 [blog](https://velog.io/@wltnrms0629) | 💻 [github](https://github.com/jsg0629)
 
 ### 조혜빈
 
-📒 [blog]() | 💻 [github]()
+📒 [blog](https://hb829.tistory.com/) | 💻 [github](https://github.com/hyebin829)
 
 
 ### 개발 기간
